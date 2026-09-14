@@ -88,7 +88,7 @@
   .years .hd{padding:0 28px}
   .timeline{margin-top:30px;padding:0 28px}
   .timeline-in{position:relative;padding-left:26px;border-left:1px solid rgba(201,169,97,.28)}
-  .ch{display:block;position:relative;padding:0 0 30px;color:inherit}
+  .ch{position:relative;padding:0 0 30px;color:inherit}
   .ch:last-child{padding-bottom:0}
   .ch b.dot{position:absolute;left:-30px;width:7px;height:7px;margin-top:8px;background:var(--gold);border-radius:50%}
   .ch.now b.dot{background:var(--gold-bright);box-shadow:0 0 0 4px rgba(237,200,115,.16)}
@@ -96,6 +96,13 @@
   .ch .ti{margin-top:6px;font-family:var(--serif);font-weight:700;font-size:19px;color:#fff}
   .ch .de{margin-top:6px;font-size:14px;line-height:1.7;color:var(--muted)}
   .ch .ep{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:12px;color:var(--gold-bright)}
+  .ch{display:grid;grid-template-columns:1fr 112px;column-gap:14px;align-items:start}
+  .ch .th{position:relative;aspect-ratio:16/9;overflow:hidden;border:1px solid rgba(201,169,97,.35);background:var(--navy4);margin-top:2px}
+  .ch .th img{width:100%;height:100%;object-fit:cover;opacity:.85;transition:opacity .3s,transform .35s ease}
+  .ch .th-play{position:absolute;left:50%;top:50%;width:26px;height:26px;margin:-13px 0 0 -13px;border-radius:50%;
+    border:1px solid rgba(237,200,115,.85);background:rgba(6,16,31,.55);transition:transform .3s,background-color .3s}
+  .ch .th-play::after{content:"";position:absolute;left:10px;top:7px;border-style:solid;border-width:6px 0 6px 9px;border-color:transparent transparent transparent #EDC873}
+  @media (max-width:360px){.ch{grid-template-columns:1fr 96px;column-gap:10px}}
 
   /* photos */
   .photos{margin-top:36px;padding:0 28px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
@@ -171,6 +178,8 @@
     .outline:hover{background:rgba(201,169,97,.12);border-color:var(--gold)}
     .ch:hover .ti{color:var(--gold-bright)}
     .ch:hover b.dot{transform:scale(1.5)}
+    .ch:hover .th img{opacity:1;transform:scale(1.05)}
+    .ch:hover .th-play{transform:scale(1.1);background:rgba(201,169,97,.3)}
     .vcard:hover{border-color:var(--gold)}
     .vcard:hover .thumb img{opacity:.95;transform:scale(1.03)}
     .vcard:hover .play span{transform:scale(1.08);background:rgba(201,169,97,.25)}
@@ -266,31 +275,43 @@
       <div class="timeline-in">
         <a class="ch" href="https://youtu.be/Jm6unX7WjmM" target="_blank" rel="noopener">
           <b class="dot"></b>
+          <div class="ch-txt">
           <div class="yr">2007 — 2010</div>
           <div class="ti">창립의 열정</div>
           <div class="de">부송중학교 체육관에서 클럽이 시작됐습니다.</div>
           <div class="ep"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l6 3.5-6 3.5z"/></svg>EP.01 · 3:43</div>
+          </div>
+          <div class="th"><img src="https://img.youtube.com/vi/Jm6unX7WjmM/mqdefault.jpg" alt="EP.01 창립의 열정 썸네일" loading="lazy" decoding="async"><span class="th-play"></span></div>
         </a>
         <a class="ch" href="https://youtu.be/-pUANIPW-FY" target="_blank" rel="noopener">
           <b class="dot"></b>
+          <div class="ch-txt">
           <div class="yr">2011 — 2015</div>
           <div class="ti">함께 자란 시간</div>
           <div class="de">회원이 늘고, 클럽의 틀이 잡힌 시기입니다.</div>
           <div class="ep"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l6 3.5-6 3.5z"/></svg>EP.02 · 3:33</div>
+          </div>
+          <div class="th"><img src="https://img.youtube.com/vi/-pUANIPW-FY/mqdefault.jpg" alt="EP.02 함께 자란 시간 썸네일" loading="lazy" decoding="async"><span class="th-play"></span></div>
         </a>
         <a class="ch" href="https://youtu.be/tL6s1YjRWdE" target="_blank" rel="noopener">
           <b class="dot"></b>
+          <div class="ch-txt">
           <div class="yr">2016 — 2020</div>
           <div class="ti">역사를 잇다</div>
           <div class="de">기수가 이어지며 클럽의 황금기를 지났습니다.</div>
           <div class="ep"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l6 3.5-6 3.5z"/></svg>EP.03 · 4:10</div>
+          </div>
+          <div class="th"><img src="https://img.youtube.com/vi/tL6s1YjRWdE/mqdefault.jpg" alt="EP.03 역사를 잇다 썸네일" loading="lazy" decoding="async"><span class="th-play"></span></div>
         </a>
         <a class="ch now" href="https://youtu.be/IZfGYWsk6V4" target="_blank" rel="noopener">
           <b class="dot"></b>
+          <div class="ch-txt">
           <div class="yr">2021 — 2026</div>
           <div class="ti">그래도, 부송</div>
           <div class="de">멈춰 선 시기를 지나 다시 코트로 돌아왔습니다.</div>
           <div class="ep"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l6 3.5-6 3.5z"/></svg>EP.04 · 4:05</div>
+          </div>
+          <div class="th"><img src="https://img.youtube.com/vi/IZfGYWsk6V4/mqdefault.jpg" alt="EP.04 그래도, 부송 썸네일" loading="lazy" decoding="async"><span class="th-play"></span></div>
         </a>
       </div>
     </div>
